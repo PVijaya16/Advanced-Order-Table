@@ -1,0 +1,55 @@
+<mvc:View controllerName="exercise1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="Orders">
+      <content>
+          <Table 
+            id="ordersTable"
+            items="{
+                path: '/Orders',
+                parameters: { $skip: 3, $top: 10 }
+            }"
+            growing="true"
+            growingScrollToLoad="true"
+            growingThreshold="10">
+             <columns>
+                <Column>
+                   <Text text="Order ID"/>
+                </Column>
+                <Column>
+                  <Text text="Customer ID"/>
+                </Column>
+                <Column>
+                  <Text text="Employee ID"/>
+                </Column>
+                <Column>
+                  <Text text="Order Date"/>
+                </Column>
+                <Column>
+                  <Text text="Required Date"/>
+                </Column>
+                <Column>
+                  <Text text="Ship Country"/>
+                </Column>
+                <Column>
+                  <Text text="Freight"/>
+                </Column>
+             </columns>
+             <items>
+               <ColumnListItem >
+                   <cells>
+                      <Text text="{OrderID}"/>
+                      <Text text="{CustomerID}"/>
+                      <Text text="{OrderDate}"/>
+                      <Text text="{EmployeeID}"/>
+                      <Text text="{RequiredDate}"/>
+                      <Text text="{ShipCountry}"/>
+                      <Text text="{Freight}"/>
+                   </cells>
+               </ColumnListItem>
+             </items>
+          </Table>
+      </content>
+
+    </Page>
+</mvc:View>
